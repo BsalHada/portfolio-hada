@@ -4,8 +4,9 @@ import { ProjectCard2 } from "./ProjectCard2";
 import ImgSrc from "../assets/mobile.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, } from "@fortawesome/free-solid-svg-icons";
+
 const ProjectImage = styled.div`
-// background-image: url(.image});
+background-image: url(props.img);
 width: 28rem;
 height: 14rem;
 background-size: cover;
@@ -15,6 +16,7 @@ border-radius: 0.2rem;
 &:hover{
 transfrom:scale(8);
                   `;
+                  
 
 export const ProjectCard = (props) => {
   //how to add key and value in object
@@ -26,7 +28,7 @@ export const ProjectCard = (props) => {
   //<ProjectCard4 projectDetail={props.projectDetail}/>
   ///-----PC4----
   //<ProjectCard5 projectDetail={props.projectDetail}/>
-  ///Console.log('porpe',projectDetail)
+
 
   //<ProjectCard2 projectDetail={props.projectDetail}/>
   //<ProjectCard2 projectDetail={props.projectDetail}/>
@@ -69,7 +71,8 @@ export const ProjectCard = (props) => {
     alignItems: "center",
     textAlign: "justify",
     background: "#DEF4FF",
-    color: "#3187B8",
+    // color: "#3187B8",
+    color:'#1f1f1f',
     borderRadius: "3rem",
   });
 
@@ -115,7 +118,25 @@ export const ProjectCard = (props) => {
 
   // return(null)
 
-  console.log("tag3", props);
+  // console.log("tag3", props);
+  console.log('tag',props);
 
-  return <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />;
+  return (
+  <CardContainer>
+           <ProjectImage ></ProjectImage>
+           <FieldContainer>
+           <FieldTag>{props.tag1}</FieldTag>
+           <FieldTag>{props.tag2}</FieldTag>
+           </FieldContainer>   
+            <TextContainer>
+                    <HeadingText>   
+                      {props.body}
+                      </HeadingText>
+                      <p>{props.body}</p>
+                </TextContainer>
+
+       </CardContainer>
+
+  
+  );
 };

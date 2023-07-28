@@ -85,30 +85,14 @@ export const Projects = () => {
       </TextContainer>
       <ParentCardContainer>
         <CardContainer>
-        {/* {
-          projectArray.map((projectDetail)=>{
-            return <ProjectCard title={projectDetail.title} body={projectDetail.body} image={projectDetail.image} tag1={projectDetail.tag1} tag2={projectDetail.tag2}/>
-          }) //(info) prop which contains obj of name and id 
-        } */}
 
-       
         {
           projectArray.map((projectDetail)=>{
-            return <ProjectCard projectDetail={projectDetail} info={{name:'ananda',id:'001'}}/>
+            return <ProjectCard projectDetail={projectDetail}/>
           })
         }
-        {/* {
-          projectArray.map((data)=>{
-            return <ProjectCard projectDetail={data}/>
-          })
-        } */}
-          <ProjectCard />
-          <ProjectCard />
         </CardContainer>
-        <CardContainer>
-          <ProjectCard />
-          <ProjectCard />
-        </CardContainer>
+       
       </ParentCardContainer>
     </ProjectsContainer>
   );
